@@ -11,4 +11,7 @@
 ?>
 <h3>Index</h3>
 Dit is wat er is meegegeven als GET variabel met de url:
-<?php echo $url; ?>
+<?php
+    echo $url;
+    require_once($url.".php");
+?>
