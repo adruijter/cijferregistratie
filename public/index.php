@@ -1,17 +1,20 @@
-<?php
-    
-    if (isset($_GET['url']))
+<?php 
+ // Bepaalt het directory scheidingsteken
+ define("DS", DIRECTORY_SEPARATOR); 
+
+ // Bepaalt de root directory van ons project
+ define("ROOT", dirname(dirname(__FILE__)));
+
+if (isset($_GET['url']))
     {
         $url = $_GET['url'];
     }
     else
     {
-        $url = "homePage";
+        // Verwijzing naar onze homepage
     }
-?>
-<h3>Index</h3>
-Dit is wat er is meegegeven als GET variabel met de url:
-<?php
-    echo $url;
-    require_once($url.".php");
+
+ session_start();
+
+ require_once(ROOT.DS.'library'.DS.'bootstrap.php');
 ?>
