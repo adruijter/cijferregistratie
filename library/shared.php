@@ -31,20 +31,22 @@
      // Dit is de naam van de controller class in dit geval: UsersController
      $controller = $controller."Controller";
      
-     echo "Controller: ". $controller. "<br>";
+    // echo "Controller: ". $controller. "<br>";
+     
      
      $dispatch = new $controller($model, $controllerName, $action);
      
+     
+     
      if (method_exists($controller, $action))
      {
-         echo "method addusers bestaat";
          
          call_user_func_array(array($dispatch, $action), $queryString);
          
      }
      else
      {
-         echo "method bestaat niet";
+         echo "method '".$action."' bestaat niet";
      }
     
      
@@ -54,13 +56,21 @@
 
  function __autoload($classname)
  {
-     echo ROOT.DS.'application'.DS.
-                     'controllers'.DS.strtolower($classname).'.php';
      if (file_exists(ROOT.DS.'application'.DS.
                      'controllers'.DS.strtolower($classname).'.php'))
      {
          require_once(ROOT.DS.'application'.DS.
                      'controllers'.DS.strtolower($classname).'.php');
+     }
+     else if (file_exists(ROOT.DS.'application'.DS.
+                     'models'.DS.strtolower($classname).'.php'))
+     {
+         require_once(ROOT.DS.'application'.DS.
+                     'models'.DS.strtolower($classname).'.php');
+     }
+     else if (file_exists(ROOT.DS.'library'.DS.strtolower($classname).'.class.php'))
+     {
+         require_once(ROOT.DS.'library'.DS.strtolower($classname).'.class.php');
      }
      else
      {

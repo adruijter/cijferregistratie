@@ -1,12 +1,13 @@
 <?php
- class UsersController
+ class UsersController extends Controller
  {
      
      
      //Constructor
-     public function __contruct($model, $controllerName, $action)
+     public function __construct($model, $controllerName, $action)
      {
-         
+         parent::__construct($model, $controllerName, $action);
+         echo "Dit is na de aanroep van de parentclass";
      }
      
      public function adduser($id, $naam, $leeftijd)
