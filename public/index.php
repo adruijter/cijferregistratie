@@ -11,7 +11,7 @@ if (isset($_GET['url']))
     }
     else
     {
-        // Verwijzing naar onze homepage
+        $url = "users/adduser/123/arjan/54";
     }
 
  session_start();
