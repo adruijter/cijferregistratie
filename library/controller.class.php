@@ -14,7 +14,14 @@
         $this->model = new $model(); 
         $this->controller = $controller;
         $this->action = $action;
-    }    
+        $this->template = new Template($controller, $action);
+        
+    }
+     
+    public function __destruct()
+    {
+        $this->template->render();
+    }
      
  }
 ?>
