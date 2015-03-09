@@ -9,7 +9,7 @@
         //Properties
         public function set($name, $value)
         {
-            $this->variables[$name] = value;
+            $this->variables[$name] = $value;
             
         }        
        
@@ -22,6 +22,9 @@
         
         public function render()
         {
+            //var_dump($this->variables);
+            extract($this->variables);
+            
             include(ROOT.DS.'application'.DS.'views'.DS.'header.php');
             
             if (file_exists(ROOT.DS.'application'.DS.'views'.DS.$this->controller.DS.

@@ -7,15 +7,12 @@
      public function __construct($model, $controllerName, $action)
      {
          parent::__construct($model, $controllerName, $action);
-         echo "Dit is na de aanroep van de parentclass";
      }
      
-     public function adduser($id, $naam, $leeftijd)
+     public function adduser()
      {
-         echo "Dit is mijn id: ".$id.
-              "Dit is mijn naam: ".$naam.
-              "Dit is mijn leeftijd: ".$leeftijd;
-         
+         $introtext = "Geef uw naam:";
+         $this->set('header', $introtext);         
      }
  }
 ?>

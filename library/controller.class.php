@@ -2,10 +2,15 @@
  class Controller
  {
     // Fields
-    private $model;
-    private $controller;
-    private $action;
-    private $template;     
+    protected $model;
+    protected $controller;
+    protected $action;
+    protected $template;  
+     
+    public function set($name, $value)
+    {
+        $this->template->set($name, $value);
+    }
      
      
     // Constructor
