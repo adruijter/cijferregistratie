@@ -7,6 +7,7 @@
     protected $action;
     protected $template;  
      
+    // Properties
     public function set($name, $value)
     {
         $this->template->set($name, $value);

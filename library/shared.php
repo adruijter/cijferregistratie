@@ -37,7 +37,6 @@
      $dispatch = new $controller($model, $controllerName, $action);
      
      
-     
      if (method_exists($controller, $action))
      {
          
