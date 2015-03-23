@@ -3,7 +3,6 @@
     {
         public function insert_into_users($post)
         {
-           // echo "Ik zit in de User Model";
             $query = "INSERT INTO `users` (`id`,
                                            `voornaam`,
                                            `tussenvoegsel`,
@@ -15,6 +14,11 @@
             $this->query($query);
         }
         
+        public function select_all()
+        {
+            $query = "SELECT *
+                      FROM `users`";
+            return $this->query($query);
+        }        
     }
-
 ?>

@@ -9,8 +9,7 @@
         //Properties
         public function set($name, $value)
         {
-            $this->variables[$name] = $value;
-            
+            $this->variables[$name] = $value;            
         }        
        
         //Constructor
@@ -27,11 +26,9 @@
             
             include(ROOT.DS.'application'.DS.'views'.DS.'header.php');
             
-            if (file_exists(ROOT.DS.'application'.DS.'views'.DS.$this->controller.DS.
-                                $this->action.'.php'))
+            if (file_exists(ROOT.DS.'application'.DS.'views'.DS.$this->controller.DS.$this->action.'.php'))
             {
-                include(ROOT.DS.'application'.DS.'views'.DS.$this->controller.DS.
-                                $this->action.'.php');
+                include(ROOT.DS.'application'.DS.'views'.DS.$this->controller.DS.$this->action.'.php');
             }
             else
             {
