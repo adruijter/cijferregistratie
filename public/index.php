@@ -11,7 +11,7 @@ if (isset($_GET['url']))
     }
     else
     {
-        $url = "users/adduser/123/arjan/54";
+        $url = "users/homepage";
     }
 
  session_start();

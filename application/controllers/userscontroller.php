@@ -39,5 +39,11 @@
          $table .= "</table>";
          $this->set('table', $table);
      }
+     
+     public function homepage()
+     {
+         $this->set('header', "Welkom op de algemene homepage.");
+         
+     }
  }
 ?>
